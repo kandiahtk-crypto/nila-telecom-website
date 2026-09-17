@@ -1,1 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nila Telecom — global travel eSIMs. Choose your destination, get your eSIM and stay connected wherever you land.">
+<title>Nila Telecom | Global Travel eSIM</title>
 
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#101827;
+  --navy:#0b1730;
+  --blue:#246bfd;
+  --sky:#eaf2ff;
+  --gold:#d5ad5b;
+  --cream:#faf9f6;
+  --muted:#647084;
+  --white:#fff;
+  --line:#e5e9ef;
+}
+html{scroll-behavior:smooth}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif;
+  color:var(--ink);
+  background:var(--cream);
+  line-height:1.55;
+}
+a{text-decoration:none;color:inherit}
+button,input{font:inherit}
+.container{width:min(1160px,92%);margin:auto}
+
+/* HEADER */
+header{
+  position:sticky;top:0;z-index:100;
+  background:rgba(250,249,246,.94);
+  backdrop-filter:blur(16px);
+  border-bottom:1px solid rgba(0,0,0,.05);
+}
+.nav{
+  min-height:76px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:25px;
+}
+.logo{
+  display:flex;align-items:center;gap:11px;
+  font-weight:800;font-size:20px;letter-spacing:.4px;
+}
+.logo-mark{
+  width:36px;height:36px;border-radius:11px;
+  display:grid;place-items:center;
+  background:var(--navy);color:white;
+  font-weight:900;
+}
+nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600}
+.nav-cta{
+  padding:11px 18px;border-radius:30px;
+  background:var(--navy);color:white;
+}
+.menu{display:none;border:0;background:none;font-size:25px}
+
+/* HERO */
+.hero{
+  padding:92px 0 65px;
+  overflow:hidden;
+  position:relative;
+}
+.hero:after{
+  content:"";
+  position:absolute;
+  width:600px;height:600px;
+  border-radius:50%;
+  background:radial-gradient(circle,#dbe8ff 0%,rgba(219,232,255,0) 70%);
+  right:-220px;top:-170px;z-index:-1;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns:1.12fr .88fr;
+  align-items:center;
+  gap:70px;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  background:white;border:1px solid var(--line);
+  border-radius:40px;padding:8px 13px;
+  font-size:12px;font-weight:750;letter-spacing:.5px;
+  margin-bottom:23px;
+}
+.hero h1{
+  font-size:clamp(47px,6vw,76px);
+  line-height:.99;
+  letter-spacing:-3px;
+  max-width:720px;
+}
+.hero h1 span{color:var(--blue)}
+.hero-copy{
+  margin:25px 0 29px;
+  font-size:18px;color:var(--muted);
+  max-width:590px;
+}
+.search-box{
+  display:flex;
+  background:white;
+  border:1px solid var(--line);
+  border-radius:18px;
+  padding:7px;
+  max-width:600px;
+  box-shadow:0 20px 55px rgba(23,41,75,.09);
+}
+.search-box input{
+  flex:1;border:0;outline:none;
+  padding:13px 16px;background:transparent;
+  min-width:0;
+}
+.search-box button{
+  border:0;background:var(--blue);color:white;
+  padding:14px 23px;border-radius:13px;
+  font-weight:750;cursor:pointer;
+}
+.trust{
+  display:flex;flex-wrap:wrap;gap:19px;
+  margin-top:22px;color:#566174;font-size:13px;
+}
+.trust span:before{content:"✓";color:#16865c;font-weight:900;margin-right:6px}
+
+/* PHONE */
+.phone-wrap{display:flex;justify-content:center}
+.phone{
+  width:310px;
+  background:var(--navy);
+  border-radius:39px;
+  padding:12px;
+  box-shadow:0 35px 80px rgba(10,23,48,.24);
+  transform:rotate(3deg);
+}
+.phone-screen{
+  min-height:550px;border-radius:30px;
+  padding:27px 20px;
+  background:linear-gradient(160deg,#f5f8ff,#fff);
+}
+.phone-top{display:flex;justify-content:space-between;font-weight:800;font-size:13px}
+.globe{
+  width:130px;height:130px;border-radius:50%;
+  margin:45px auto 25px;
+  display:grid;place-items:center;
+  font-size:65px;
+  background:linear-gradient(145deg,#dce8ff,#f5e7c7);
+  box-shadow:0 20px 40px rgba(36,107,253,.12);
+}
+.phone h3{text-align:center;font-size:26px;line-height:1.15}
+.phone p{text-align:center;color:var(--muted);font-size:13px;margin:11px 0 27px}
+.mini-plan{
+  background:white;border:1px solid var(--line);
+  border-radius:18px;padding:17px;margin-top:11px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.mini-plan strong{display:block}
+.mini-plan small{color:var(--muted)}
+.price{font-weight:850;color:var(--blue)}
+
+/* STRIP */
+.strip{
+  background:var(--navy);color:white;
+  padding:21px 0;
+}
+.strip-inner{
+  display:flex;justify-content:center;
+  flex-wrap:wrap;gap:45px;
+  font-size:14px;font-weight:650;
+}
+
+/* SECTIONS */
+section{padding:90px 0}
+.section-head{text-align:center;max-width:680px;margin:0 auto 46px}
+.kicker{
+  color:var(--blue);font-size:12px;
+  text-transform:uppercase;letter-spacing:1.5px;
+  font-weight:850;margin-bottom:9px;
+}
+.section-head h2{
+  font-size:clamp(33px,4vw,49px);
+  line-height:1.08;letter-spacing:-1.5px;
+}
+.section-head p{color:var(--muted);margin-top:15px}
+
+/* DESTINATIONS */
+.destinations{background:white}
+.cards{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+}
+.card{
+  border:1px solid var(--line);
+  background:var(--cream);
+  border-radius:22px;padding:23px;
+  transition:.2s;
+}
+.card:hover{transform:translateY(-4px);box-shadow:0 18px 45px rgba(0,0,0,.07)}
+.flag{font-size:35px;margin-bottom:17px}
+.card h3{font-size:19px}
+.card p{color:var(--muted);font-size:13px;margin:6px 0 19px}
+.plan-bottom{display:flex;justify-content:space-between;align-items:end}
+.from{font-size:12px;color:var(--muted)}
+.amount{font-size:23px;font-weight:850}
+.choose{
+  border:0;background:var(--navy);color:white;
+  padding:9px 13px;border-radius:10px;
+  cursor:pointer;font-size:12px;font-weight:700;
+}
+
+/* STEPS */
+.steps{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:35px;
+}
+.step{text-align:center;padding:10px 30px}
+.step-number{
+  width:54px;height:54px;border-radius:17px;
+  margin:0 auto 19px;
+  display:grid;place-items:center;
+  background:var(--sky);color:var(--blue);
+  font-size:20px;font-weight:850;
+}
+.step h3{font-size:20px;margin-bottom:8px}
+.step p{font-size:14px;color:var(--muted)}
+
+/* BENEFIT */
+.benefit{
+  background:var(--navy);
+  border-radius:34px;
+  padding:65px;
+  color:white;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:70px;
+  align-items:center;
+}
+.benefit h2{font-size:42px;line-height:1.08;letter-spacing:-1px}
+.benefit p{color:#bfc9dc;margin-top:18px}
+.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:15px}
+.benefit-item{
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:17px;padding:19px;
+}
+.benefit-item b{display:block;margin-bottom:4px}
+.benefit-item span{font-size:12px;color:#bac5d8}
+
+/* FAQ */
+.faq{max-width:800px;margin:auto}
+details{border-bottom:1px solid var(--line);padding:20px 3px}
+summary{font-weight:750;cursor:pointer;list-style:none;font-size:17px}
+details p{color:var(--muted);font-size:14px;padding-top:13px;max-width:700px}
+
+/* CTA */
+.final-cta{text-align:center;padding-top:30px}
+.final-box{
+  background:linear-gradient(135deg,#edf3ff,#f8f0df);
+  border-radius:32px;padding:65px 25px;
+}
+.final-box h2{font-size:42px;letter-spacing:-1px}
+.final-box p{color:var(--muted);margin:12px auto 25px}
+.primary{
+  display:inline-block;background:var(--blue);color:white;
+  padding:15px 25px;border-radius:13px;font-weight:750;
+}
+
+/* FOOTER */
+footer{
+  padding:45px 0 30px;
+  border-top:1px solid var(--line);
+  margin-top:80px;
+}
+.footer-grid{
+  display:flex;justify-content:space-between;
+  gap:30px;flex-wrap:wrap;
+}
+.footer-copy{color:var(--muted);font-size:13px;margin-top:12px;max-width:350px}
+.footer-links{display:flex;gap:25px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.copyright{margin-top:40px;font-size:12px;color:#8b94a4}
+
+/* SEARCH MESSAGE */
+#searchResult{
+  margin-top:13px;
+  font-size:13px;
+  color:var(--blue);
+  font-weight:650;
+}
+
+/* MOBILE */
+@media(max-width:850px){
+  nav{display:none}
+  nav.open{
+    display:flex;position:absolute;top:76px;left:0;right:0;
+    background:var(--cream);padding:25px;
+    flex-direction:column;border-bottom:1px solid var(--line)
+  }
+  .menu{display:block}
+  .hero{padding-top:62px}
+  .hero-grid{grid-template-columns:1fr;gap:55px}
+  .hero h1{letter-spacing:-2px}
+  .hero-copy{font-size:16px}
+  .phone{width:285px}
+  .cards{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr}
+  .benefit{grid-template-columns:1fr;padding:40px 25px;gap:35px}
+}
+@media(max-width:520px){
+  .hero h1{font-size:49px}
+  .search-box{flex-direction:column}
+  .search-box button{width:100%}
+  .cards{grid-template-columns:1fr}
+  .benefit-grid{grid-template-columns:1fr}
+  section{padding:70px 0}
+  .final-box h2,.benefit h2{font-size:34px}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#" class="logo">
+      <span class="logo-mark">N</span>
+      NILA TELECOM
+    </a>
+
+    <nav id="nav">
+      <a href="#destinations">Destinations</a>
+      <a href="#how">How it works</a>
+      <a href="#why">Why Nila</a>
+      <a href="#faq">Help</a>
+      <a href="#destinations" class="nav-cta">Get an eSIM</a>
+    </nav>
+
+    <button class="menu" id="menu" aria-label="Open menu">☰</button>
+  </div>
+</header>
+
+<main>
+
+<section class="hero">
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">🌍 GLOBAL TRAVEL eSIM</div>
+
+      <h1>Stay connected,<br><span>wherever you land.</span></h1>
+
+      <p class="hero-copy">
+        Simple travel data without physical SIM cards or roaming surprises.
+        Choose your destination, get your eSIM and arrive connected.
+      </p>
+
+      <div class="search-box">
+        <input id="destination" type="text"
+          placeholder="Where are you travelling?"
+          aria-label="Destination">
+        <button id="searchBtn">Find eSIMs</button>
+      </div>
+
+      <div id="searchResult"></div>
+
+      <div class="trust">
+        <span>Digital eSIM</span>
+        <span>Fast delivery</span>
+        <span>Keep your SIM</span>
+      </div>
+    </div>
+
+    <div class="phone-wrap">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="phone-top">
+            <span>NILA</span>
+            <span>5G</span>
+          </div>
+
+          <div class="globe">🌍</div>
+
+          <h3>Your world.<br>Your connection.</h3>
+          <p>Travel data made beautifully simple.</p>
+
+          <div class="mini-plan">
+            <div>
+              <strong>Europe</strong>
+              <small>5 GB · 30 days</small>
+            </div>
+            <span class="price">£—</span>
+          </div>
+
+          <div class="mini-plan">
+            <div>
+              <strong>Global</strong>
+              <small>Travel eSIM</small>
+            </div>
+            <span class="price">→</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="strip">
+  <div class="container strip-inner">
+    <span>✈️ Built for international travel</span>
+    <span>⚡ Simple digital setup</span>
+    <span>📱 No SIM swapping</span>
+    <span>🌎 Global destinations</span>
+  </div>
+</div>
+
+<section class="destinations" id="destinations">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">Explore the world</div>
+      <h2>Popular destinations</h2>
+      <p>
+        Select where you're travelling. Live plans and pricing can be
+        connected directly to the Nila catalogue.
+      </p>
+    </div>
+
+    <div class="cards">
+
+      <article class="card">
+        <div class="flag">🇬🇧</div>
+        <h3>United Kingdom</h3>
+        <p>Flexible data for trips across the UK.</p>
+        <div class="plan-bottom">
+          <div>
+            <div class="from">Plans</div>
+            <div class="amount">Coming live</div>
+          </div>
+          <button class="choose" data-place="United Kingdom">Explore</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="flag">🇪🇺</div>
+        <h3>Europe</h3>
+        <p>Stay online while travelling across Europe.</p>
+        <div class="plan-bottom">
+          <div>
+            <div class="from">Plans</div>
+            <div class="amount">Coming live</div>
+          </div>
+          <button class="choose" data-place="Europe">Explore</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="flag">🇺🇸</div>
+        <h3>United States</h3>
+        <p>Travel data for your American journey.</p>
+        <div class="plan-bottom">
+          <div>
+            <div class="from">Plans</div>
+            <div class="amount">Coming live</div>
+          </div>
+          <button class="choose" data-place="United States">Explore</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="flag">🇱🇰</div>
+        <h3>Sri Lanka</h3>
+        <p>Connect from the moment you arrive.</p>
+        <div class="plan-bottom">
+          <div>
+            <div class="from">Plans</div>
+            <div class="amount">Coming live</div>
+          </div>
+          <button class="choose" data-place="Sri Lanka">Explore</button>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">Three simple steps</div>
+      <h2>From checkout to connected.</h2>
+    </div>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-number">01</div>
+        <h3>Choose your destination</h3>
+        <p>Find an eSIM data plan for where you're travelling.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">02</div>
+        <h3>Get your eSIM</h3>
+        <p>After purchase, your eSIM installation details can be delivered digitally.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">03</div>
+        <h3>Land connected</h3>
+        <p>Install your eSIM and activate it according to your plan instructions.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="why">
+  <div class="container">
+    <div class="benefit">
+
+      <div>
+        <div class="kicker" style="color:#89adff">NILA TELECOM</div>
+        <h2>Travel further.<br>Connect simpler.</h2>
+        <p>
+          Nila Telecom is being built around one idea: international mobile
+          data should be simple to understand, simple to buy and simple to use.
+        </p>
+      </div>
+
+      <div class="benefit-grid">
+        <div class="benefit-item">
+          <b>Digital first</b>
+          <span>No physical SIM card required on compatible devices.</span>
+        </div>
+
+        <div class="benefit-item">
+          <b>Global travel</b>
+          <span>Built for travellers crossing borders.</span>
+        </div>
+
+        <div class="benefit-item">
+          <b>Clear plans</b>
+          <span>See the data allowance and validity before buying.</span>
+        </div>
+
+        <div class="benefit-item">
+          <b>Simple setup</b>
+          <span>Installation information delivered digitally.</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="kicker">Help centre</div>
+      <h2>Good to know.</h2>
+    </div>
+
+    <div class="faq">
+
+      <details>
+        <summary>What is an eSIM?</summary>
+        <p>
+          An eSIM is a digital SIM built into compatible phones and devices.
+          It allows a mobile plan to be installed without inserting a
+          traditional plastic SIM card.
+        </p>
+      </details>
+
+      <details>
+        <summary>Can I keep my normal SIM?</summary>
+        <p>
+          On compatible dual-SIM devices you can usually keep your existing
+          SIM and use an eSIM for travel data. Device capabilities vary, so
+          check your phone before purchasing.
+        </p>
+      </details>
+
+      <details>
+        <summary>When should I install my eSIM?</summary>
+        <p>
+          Installation and activation rules can vary by plan. Follow the
+          instructions supplied with your Nila eSIM before travelling.
+        </p>
+      </details>
+
+      <details>
+        <summary>Does every phone support eSIM?</summary>
+        <p>
+          No. Your device must support eSIM technology and normally needs to
+          be network-unlocked. Check your device specifications before buying.
+        </p>
+      </details>
+
+    </div>
+  </div>
+</section>
+
+<section class="final-cta">
+  <div class="container">
+    <div class="final-box">
+      <h2>Where will you go next?</h2>
+      <p>Find travel data for your next destination.</p>
+      <a class="primary" href="#destinations">Explore eSIMs</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="container">
+
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <span class="logo-mark">N</span>
+          NILA TELECOM
+        </div>
+        <p class="footer-copy">
+          Global travel connectivity, made simple.
+        </p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#destinations">Destinations</a>
+        <a href="#how">How it works</a>
+        <a href="#faq">Help</a>
+        <a href="#">Terms</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+
+    <div class="copyright">
+      © <span id="year"></span> Nila Telecom. All rights reserved.
+    </div>
+
+  </div>
+</footer>
+
+<script>
+const menu = document.getElementById("menu");
+const nav = document.getElementById("nav");
+
+menu.addEventListener("click", () => {
+  nav.classList.toggle("open");
+});
+
+const destination = document.getElementById("destination");
+const result = document.getElementById("searchResult");
+
+function findDestination(place){
+  const value = (place || destination.value).trim();
+
+  if(!value){
+    result.textContent = "Enter a country or region to start.";
+    return;
+  }
+
+  destination.value = value;
+  result.textContent =
+    value + " selected — live Nila eSIM plans will appear here when the catalogue is connected.";
+
+  document.getElementById("destinations")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+document.getElementById("searchBtn")
+  .addEventListener("click", () => findDestination());
+
+destination.addEventListener("keydown", e => {
+  if(e.key === "Enter") findDestination();
+});
+
+document.querySelectorAll(".choose").forEach(button => {
+  button.addEventListener("click", () => {
+    findDestination(button.dataset.place);
+  });
+});
+
+document.getElementById("year").textContent =
+  new Date().getFullYear();
+</script>
+
+</body>
+</html>
